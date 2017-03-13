@@ -1,0 +1,49 @@
+SQL> get C:\Oracle\Report1
+  1  SET PAGESIZE 30
+  2  SET LINESIZE 70
+  3  SET FEEDBACK OFF
+  4  TTITLE 'Part 5 Semester Project|Each customer''s purchased builds'
+  5  BTITLE 'By - Robert Bryan'
+  6  BREAK ON customer_id SKIP 2
+  7  COL customer_id HEADING 'Customer ID' FORMAT 999
+  8  COL build_id HEADING 'Build ID' FORMAT 999
+  9  COL purchase_date HEADING 'Purchase Date' FORMAT A15
+ 10  -- SQL Statement
+ 11  -- Selects each customer that has purchased a build, what build id they have purchased, and the purchase date. 
+ 12  SELECT customer_id, build_id, purchase_date FROM builds_purchased
+ 13* ORDER BY 1;
+SQL> @ C:\Oracle\Report1
+
+Sun Nov 27                                                   page    1
+                       Part 5 Semester Project
+                   Each customer's purchased builds
+
+Customer ID Build ID Purchase Date                                    
+----------- -------- ---------------                                  
+          1        1 02-MAR-16                                        
+                                                                      
+                                                                      
+          2        1 04-JUL-15                                        
+                   4 24-JAN-16                                        
+                                                                      
+                                                                      
+          3        3 24-JUL-16                                        
+                   3 04-MAR-16                                        
+                                                                      
+                                                                      
+          4        3 04-MAR-16                                        
+                   3 19-OCT-16                                        
+                                                                      
+                                                                      
+          5        4 11-MAR-16                                        
+                                                                      
+                                                                      
+
+
+
+
+                          By - Robert Bryan
+SQL> spool off
+
+
+
